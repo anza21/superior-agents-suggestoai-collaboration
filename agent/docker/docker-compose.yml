@@ -1,0 +1,12 @@
+# docker-compose.yml
+version: "3.8"
+
+services:
+  agent-executor:
+    container_name: agent-executor
+    hostname: agent-executor
+    build: .
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    network_mode: "host"
